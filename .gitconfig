@@ -1,0 +1,55 @@
+[user]
+	name = Michel WU
+	email = sasu.mwu.services@gmail.com
+	username = mwu
+[core]
+	editor = vim
+	autocrlf = false
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore
+	preloadindex = true
+	fscache = true
+[push]
+	default = current
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	l = log --oneline --graph --color --all --decorate
+	st = status
+	co = checkout
+	br = branch
+	c = commit
+	cm = commit -m
+	ca = commit --amend
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = chery-pick --continue
+	df = diff
+	showdf = diff-tree --no-commit-id --name-only -r
+	brd = branch -d
+	brD = branch -D
+	f = fetch
+	fall = fetch --prune --tags
+	rpo = remote prune origin
+	last = log -1 HEAD
+	prunebr = !git remote prune origin && git branch-vv | grep ':gone]' | awk '{print $1} | xargs -r git branch -d
+[http]
+	sslCAInfo = ~/rootCA.crt
